@@ -69,23 +69,25 @@ const Technologies = styled.div`
   align-items: center;
   justify-items: center;
   grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-row-gap: 4rem;
 
   @media (min-width: 500px) {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
-    grid-column-gap: 1rem;
+    grid-row-gap: 2rem;
   }
 
   @media (min-width: 1030px) {
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto;
-    grid-column-gap: 1rem;
+    grid-column-gap: 3rem;
+    grid-row-gap: 0;
   }
 
   img {
-    //  margin-bottom: 2rem;
+    width: 80%;
     @media (min-width: 1030px) {
+      width: 100%;
       margin-bottom: 0;
     }
   }
@@ -136,40 +138,40 @@ const Card = styled.div`
 
 const PortfolioImages = styled.div`
 
-img {
+  img {
   width: 100%;
   }
   
   @media (min-width: 1030px) {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    align-items: center;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
 
-    img {
-      transition all .2s;
-      
-      &.big {
-	width: 100%;
-      }
-      
-      &.big:nth-child(odd) {
-	margin-left: -2rem;
-      }
-      
-      &.big:nth-child(even) {
-	margin-right: -2rem;
-      }
+  img {
+  transition all .2s;
+  
+  &.big {
+  width: 100%;
+  }
+  
+  &.big:nth-child(odd) {
+  margin-left: -2rem;
+  }
+  
+  &.big:nth-child(even) {
+  margin-right: -2rem;
+  }
 
-      &.small {
-	width: 75%;
-      }
-      
-      :hover {
-	transform: scale(1.1);
-      }
-    }
+  &.small {
+  width: 75%;
+  }
+  
+  :hover {
+  transform: scale(1.1);
+  }
+  }
   }
 `
 
