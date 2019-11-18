@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { StaticQuery, graphql, Link } from 'gatsby'
-import styled from 'styled-components'
+import React from "react"
+import PropTypes from "prop-types"
+import { StaticQuery, graphql, Link } from "gatsby"
+import styled from "styled-components"
 
 const Container = styled.header`
   max-width: 1030px;

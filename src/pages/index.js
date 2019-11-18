@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Contact from '../components/contact'
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Contact from "../components/contact"
 
 const Container = styled.div`
   max-width: 1030px;
@@ -25,7 +25,7 @@ const BackgroundPattern = styled.img`
 `
 
 const Title = styled.h1`
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: #1ececb;
   font-weight: bold;
   font-size: 13vw;
@@ -37,7 +37,7 @@ const Title = styled.h1`
 `
 
 const SmallTitle = styled.h2`
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: #1ececb;
   font-weight: bold;
   font-size: 16vw;
@@ -49,7 +49,7 @@ const SmallTitle = styled.h2`
 `
 
 const SubTitle = styled.h3`
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: #25ce7b;
   font-weight: 800;
   text-transform: uppercase;
@@ -123,11 +123,11 @@ const Card = styled.div`
   }
 
   h3 {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     font-weight: 800;
     font-size: 0.8333333333333334rem;
     margin-bottom: 0.6666666666666666rem;
-    color: ${props => props.accent || '#E4EBFC'};
+    color: ${props => props.accent || "#E4EBFC"};
   }
 
   p {
@@ -198,7 +198,7 @@ const IndexPage = () => {
   `)
 
   const assets = allImages.images.edges
-    .filter(x => x.node.name !== 'logo')
+    .filter(x => x.node.name !== "logo")
     .reduce((acc, x) => {
       acc[x.node.name] = {
         publicURL: x.node.publicURL,
@@ -206,13 +206,13 @@ const IndexPage = () => {
       return acc
     }, {})
 
-  const types = 'big,small,small,big,'
+  const types = "big,small,small,big,"
     .repeat(allImages.portfolio.edges.length)
-    .split(',')
-    .filter(x => x !== '')
+    .split(",")
+    .filter(x => x !== "")
 
   const portfolio = allImages.portfolio.edges
-    .filter(x => x.node.name !== 'favicon')
+    .filter(x => x.node.name !== "favicon")
     .reduce((acc, x, idx) => {
       acc.push({
         name: x.node.name,
@@ -225,7 +225,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO />
-      <Container style={{ marginTop: '5.166666666666667rem' }}>
+      <Container style={{ marginTop: "5.166666666666667rem" }}>
         <Title>A creative agency for entrepreneurs</Title>
         <Text style={{ maxWidth: 680 }}>
           Helping you connect with your customers by mixing art and science to
@@ -234,14 +234,14 @@ const IndexPage = () => {
         <BackgroundPattern
           src={assets.ellipses.publicURL}
           alt="Dots Background Image"
-          style={{ top: '67%' }}
+          style={{ top: "67%" }}
         />
       </Container>
-      <Container style={{ marginTop: '6rem' }}>
+      <Container style={{ marginTop: "6rem" }}>
         <SubTitle>Things we do well</SubTitle>
         <CardContainer>
           <Card accent="#FF8570" bg={assets.polygons.publicURL}>
-            <img src={assets['strategy-icon'].publicURL} alt="Strategy Icon" />
+            <img src={assets["strategy-icon"].publicURL} alt="Strategy Icon" />
             <h3>Strategy</h3>
             <Text>
               We align client expectations with your business goals using a data
@@ -249,7 +249,7 @@ const IndexPage = () => {
             </Text>
           </Card>
           <Card accent="#FEA81B" bg={assets.polygons.publicURL}>
-            <img src={assets['design-icon'].publicURL} alt="Design Icon" />
+            <img src={assets["design-icon"].publicURL} alt="Design Icon" />
             <h3>Design</h3>
             <Text>
               We design web and mobile applications, websites and brand
@@ -258,7 +258,7 @@ const IndexPage = () => {
           </Card>
           <Card accent="#1ECECB" bg={assets.polygons.publicURL}>
             <img
-              src={assets['development-icon'].publicURL}
+              src={assets["development-icon"].publicURL}
               alt="Development Icon"
             />
             <h3>Development</h3>
@@ -292,9 +292,9 @@ const IndexPage = () => {
         <BackgroundPattern
           src={assets.waves.publicURL}
           alt="Dots Background Image"
-          style={{ top: '24%' }}
+          style={{ top: "24%" }}
         />
-        <Container style={{ marginTop: '4rem' }}>
+        <Container style={{ marginTop: "4rem" }}>
           <SubTitle>Technologies we use</SubTitle>
           <Technologies>
             <img src={assets.sanity.publicURL} alt="Sanity" />

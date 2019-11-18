@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const Background = styled.div`
   background: #2e393f;
@@ -31,7 +31,7 @@ const Container = styled.div`
 `
 
 const Title = styled.h1`
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   color: #fff;
   font-weight: bold;
   font-size: 13vw;
@@ -76,8 +76,8 @@ const Contact = () => (
       style={{
         maxWidth: 680,
         opacity: 0.8,
-        margin: '1rem auto 0 auto',
-        display: 'block',
+        margin: "1rem auto 0 auto",
+        display: "block",
       }}
     >
       We’re very approachable, just tell us more about your project and we’ll

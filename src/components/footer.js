@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react"
+import styled from "styled-components"
+import { StaticQuery, graphql } from "gatsby"
 
 const Container = styled.footer`
   max-width: 1030px;
