@@ -1,34 +1,49 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import styled from 'styled-components'
+
+const Container = styled.header`
+  max-width: 1030px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+const Contact = styled.a`
+  color: #fff;
+  font-size: 0.8333333333333334rem;
+  transition all .2s;
+  
+  :hover {
+  color: #1ececb;
+  }
+`
+
+const LogoQuery = graphql`
+  {
+    file(relativePath: { eq: "logo.svg" }) {
+      relativePath
+      name
+      publicURL
+    }
+  }
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+  <StaticQuery
+    query={LogoQuery}
+    render={data => (
+      <Container>
+        <Link to="/">
+          <img src={data.file.publicURL} alt="Andshape logo" />
         </Link>
-      </h1>
-    </div>
-  </header>
+        <Contact href="mailto:hello@andshape.com">Contact</Contact>
+      </Container>
+    )}
+  />
 )
 
 Header.propTypes = {
