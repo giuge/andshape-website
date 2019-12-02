@@ -186,7 +186,7 @@ const IndexPage = () => {
           }
         }
       }
-      portfolio: allFile(filter: { extension: { eq: "png" } }) {
+      portfolio: allFile(filter: { dir: { regex: "/portfolio/" } }) {
         edges {
           node {
             publicURL
@@ -211,16 +211,14 @@ const IndexPage = () => {
     .split(",")
     .filter(x => x !== "")
 
-  const portfolio = allImages.portfolio.edges
-    .filter(x => x.node.name !== "favicon")
-    .reduce((acc, x, idx) => {
-      acc.push({
-        name: x.node.name,
-        publicURL: x.node.publicURL,
-        type: types[idx],
-      })
-      return acc
-    }, [])
+  const portfolio = allImages.portfolio.edges.reduce((acc, x, idx) => {
+    acc.push({
+      name: x.node.name,
+      publicURL: x.node.publicURL,
+      type: types[idx],
+    })
+    return acc
+  }, [])
 
   return (
     <Layout>
