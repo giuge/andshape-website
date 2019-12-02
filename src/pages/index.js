@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -139,7 +140,7 @@ const Card = styled.div`
 const PortfolioImages = styled.div`
 
   img {
-  width: 100%;
+    width: 100%;
   }
 
   @media (min-width: 1030px) {
@@ -149,7 +150,7 @@ const PortfolioImages = styled.div`
     align-items: center;
     justify-items: center;
 
-    img {
+    div {
       transition all .2s;
 
       &.big {
@@ -189,8 +190,13 @@ const IndexPage = () => {
       portfolio: allFile(filter: { dir: { regex: "/portfolio/" } }) {
         edges {
           node {
-            publicURL
             name
+            childImageSharp {
+              fluid(maxWidth: 515) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+                presentationWidth
+              }
+            }
           }
         }
       }
@@ -214,7 +220,7 @@ const IndexPage = () => {
   const portfolio = allImages.portfolio.edges.reduce((acc, x, idx) => {
     acc.push({
       name: x.node.name,
-      publicURL: x.node.publicURL,
+      childImageSharp: x.node.childImageSharp,
       type: types[idx],
     })
     return acc
@@ -271,11 +277,14 @@ const IndexPage = () => {
         <SmallTitle>Make it simple but significant</SmallTitle>
         <PortfolioImages>
           {portfolio.map(entry => (
-            <img
+            <Img
+              fluid={entry.childImageSharp.fluid}
               key={entry.name}
-              src={entry.publicURL}
               alt={entry.name}
               className={entry.type}
+              style={{
+                maxWidth: entry.childImageSharp.fluid.presentationWidth,
+              }}
             />
           ))}
         </PortfolioImages>
