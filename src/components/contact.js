@@ -45,6 +45,10 @@ const Title = styled.h1`
 const Text = styled.p`
   line-height: 140%;
   color: #e4ebfc;
+  max-width: 685px;
+  opacity: 0.8;
+  margin: 1rem auto 0 auto;
+  display: block;
 `
 
 const Button = styled.a`
@@ -62,9 +66,9 @@ const Button = styled.a`
   transition all .2s;
 
   :hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
   }
-  
+
   @media (min-width: 800px) {
     display: inline-block;
   }
@@ -72,14 +76,7 @@ const Button = styled.a`
 const Contact = () => (
   <Container>
     <Title>Let's build together</Title>
-    <Text
-      style={{
-        maxWidth: 680,
-        opacity: 0.8,
-        margin: "1rem auto 0 auto",
-        display: "block",
-      }}
-    >
+    <Text>
       We’re very approachable, just tell us more about your project and we’ll
       figure things out.
     </Text>
