@@ -141,37 +141,37 @@ const PortfolioImages = styled.div`
   img {
   width: 100%;
   }
-  
+
   @media (min-width: 1030px) {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  align-items: center;
-  justify-items: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
 
-  img {
-  transition all .2s;
-  
-  &.big {
-  width: 100%;
-  }
-  
-  &.big:nth-child(odd) {
-  margin-left: -2rem;
-  }
-  
-  &.big:nth-child(even) {
-  margin-right: -2rem;
-  }
+    img {
+      transition all .2s;
 
-  &.small {
-  width: 75%;
-  }
-  
-  :hover {
-  transform: scale(1.1);
-  }
-  }
+      &.big {
+        width: 100%;
+      }
+
+      &.big:nth-child(odd) {
+        margin-left: -2rem;
+      }
+
+      &.big:nth-child(even) {
+        margin-right: -2rem;
+      }
+
+      &.small {
+        width: 75%;
+      }
+
+      :hover {
+        transform: scale(1.1);
+      }
+    }
   }
 `
 

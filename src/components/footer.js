@@ -40,8 +40,8 @@ const Footer = () => (
       <Container>
         <Logo src={data.file.publicURL} alt="Andshape logo" />
         <Text>
-          © 2019 Andshape Srl · Via Torre Pellice 17, 10156 Torino – Italy · VAT
-          IT11874050013
+          © {new Date().getFullYear() || "2019"} Andshape Srl · Via Torre
+          Pellice 17, 10156 Torino – Italy · VAT IT11874050013
         </Text>
       </Container>
     )}
