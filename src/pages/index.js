@@ -101,7 +101,6 @@ const CardContainer = styled.div`
 
   @media (min-width: 1030px) {
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
   }
 `
@@ -111,10 +110,11 @@ const Card = styled.div`
   padding: 0.6666666666666666rem;
   margin-bottom: 1rem;
   box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.25);
-  background: ${props => `url(${props.bg}) no-repeat 95% 0.6666666666666666rem`}
+  background: ${props => `url(${props.bg}) no-repeat top 16px right 16px`}
     #414e59;
 
   @media (min-width: 1030px) {
+    flex: 1;
     max-width: 32%;
     margin-bottom: 0;
   }
@@ -248,16 +248,16 @@ const IndexPage = () => {
             <img src={assets["strategy-icon"].publicURL} alt="Strategy Icon" />
             <h3>Strategy</h3>
             <Text>
-              We align client expectations with your business goals using a data
-              driven approach.
+              We develop a communication strategy that will align your client
+              expectations with your business goals.
             </Text>
           </Card>
           <Card accent="#FEA81B" bg={assets.polygons.publicURL}>
             <img src={assets["design-icon"].publicURL} alt="Design Icon" />
             <h3>Design</h3>
             <Text>
-              We design web and mobile applications, websites and brand
-              collaterals.
+              We create a custom made design for web and mobile applications,
+              websites and brand collaterals.
             </Text>
           </Card>
           <Card accent="#1ECECB" bg={assets.polygons.publicURL}>
@@ -267,8 +267,8 @@ const IndexPage = () => {
             />
             <h3>Development</h3>
             <Text>
-              We develop fast, secure and scalable websites using innovative
-              techonlogies.
+              We use innovative technologies to develop fast, secure and
+              scalable websites that rank better on search engines.
             </Text>
           </Card>
         </CardContainer>
@@ -284,6 +284,7 @@ const IndexPage = () => {
               className={entry.type}
               style={{
                 maxWidth: entry.childImageSharp.fluid.presentationWidth,
+                margin: "0 auto",
               }}
             />
           ))}
